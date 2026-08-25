@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Santhana Renganayagi | Software & Embedded Engineer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0b0f;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 11, 15, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #22232b;
+        }
+
+        .nav-inner {
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #8b5cf6;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #b9b9c2;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 90px 0;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .small-title {
+            color: #8b5cf6;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(45px, 7vw, 82px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        h1 span {
+            color: #8b5cf6;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            color: #d0d0d5;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 700px;
+            color: #9999a5;
+            font-size: 17px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn {
+            padding: 13px 22px;
+            border-radius: 8px;
+            border: 1px solid #30303a;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: #8b5cf6;
+            border-color: #8b5cf6;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary:hover {
+            border-color: #8b5cf6;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 100px 0;
+            border-top: 1px solid #1e1e26;
+        }
+
+        .section-label {
+            color: #8b5cf6;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 40px;
+            margin-bottom: 45px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+        }
+
+        .about-text {
+            color: #aaaab4;
+            font-size: 17px;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+        }
+
+        .quick-info {
+            border: 1px solid #272730;
+            padding: 28px;
+            border-radius: 14px;
+            background: #111117;
+        }
+
+        .quick-info div {
+            margin-bottom: 22px;
+        }
+
+        .quick-info div:last-child {
+            margin-bottom: 0;
+        }
+
+        .quick-info small {
+            display: block;
+            color: #777783;
+            margin-bottom: 4px;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #111117;
+            border: 1px solid #272730;
+            border-radius: 14px;
+            padding: 28px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            border-color: #8b5cf6;
+            transform: translateY(-4px);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .skill-card p {
+            color: #9999a5;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .project {
+            background: #111117;
+            border: 1px solid #272730;
+            border-radius: 16px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            border-color: #8b5cf6;
+        }
+
+        .project-number {
+            color: #8b5cf6;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .project h3 {
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: #9999a5;
+            margin-bottom: 18px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #1b1b23;
+            color: #c8c8d0;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        /* EXPERIENCE */
+
+        .timeline {
+            border-left: 2px solid #292934;
+            padding-left: 30px;
+        }
+
+        .experience {
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        .experience::before {
+            content: "";
+            position: absolute;
+            left: -38px;
+            top: 5px;
+            width: 13px;
+            height: 13px;
+            background: #8b5cf6;
+            border-radius: 50%;
+        }
+
+        .experience h3 {
+            font-size: 22px;
+        }
+
+        .company {
+            color: #8b5cf6;
+            margin: 5px 0;
+        }
+
+        .date {
+            color: #777783;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .experience ul {
+            color: #9999a5;
+            padding-left: 18px;
+        }
+
+        /* EDUCATION */
+
+        .education-card {
+            background: #111117;
+            border: 1px solid #272730;
+            padding: 30px;
+            border-radius: 14px;
+        }
+
+        .education-card h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: #9999a5;
+        }
+
+        /* CERTIFICATIONS */
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .cert {
+            border: 1px solid #272730;
+            background: #111117;
+            border-radius: 14px;
+            padding: 25px;
+        }
+
+        .cert h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .cert p {
+            color: #888894;
+            font-size: 14px;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            text-align: center;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact-box h2 {
+            font-size: 45px;
+            margin-bottom: 18px;
+        }
+
+        .contact-box p {
+            color: #9999a5;
+            margin-bottom: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #1e1e26;
+            padding: 30px 0;
+            text-align: center;
+            color: #666672;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid,
+            .skills-grid,
+            .projects,
+            .certifications {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .contact-box h2 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="container nav-inner">
+
+        <div class="logo">
+            SR<span>.</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                Software Engineering • Embedded Systems • AI & IoT
+            </div>
+
+            <h1>
+                Santhana<br>
+                <span>Renganayagi</span>
+            </h1>
+
+            <div class="hero-subtitle">
+                Electronics & Communication Engineering Graduate
+            </div>
+
+            <p class="hero-description">
+                I build software applications, embedded systems and intelligent
+                IoT solutions using Python, Embedded C, Linux, AI/ML and modern
+                development tools.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn btn-primary">
+                    View Projects
+                </a>
+
+                <a href="mailto:renganayagi2005@gmail.com"
+                   class="btn btn-secondary">
+                    Contact Me
+                </a>
+
+                <a href="https://github.com/renganayagi2005"
+                   target="_blank"
+                   class="btn btn-secondary">
+                    GitHub
+                </a>
+
+                <a href="https://linkedin.com/in/renga-nayagi"
+                   target="_blank"
+                   class="btn btn-secondary">
+                    LinkedIn
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</header>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-label">
+            About Me
+        </div>
+
+        <h2 class="section-title">
+            Building across software & hardware.
+        </h2>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    I am a B.E. Electronics and Communication Engineering
+                    graduate with hands-on experience in software development,
+                    embedded systems, firmware, AI/ML and IoT.
+                </p>
+
+                <p>
+                    My experience includes Python backend development,
+                    Embedded C applications, Linux-based firmware simulation,
+                    ESP32-based IoT systems and AI-powered applications.
+                </p>
+
+                <p>
+                    I enjoy working on problems where software, hardware and
+                    intelligent systems come together to create practical
+                    solutions.
+                </p>
+
+            </div>
+
+            <div class="quick-info">
+
+                <div>
+                    <small>Degree</small>
+                    <strong>B.E. Electronics & Communication Engineering</strong>
+                </div>
+
+                <div>
+                    <small>CGPA</small>
+                    <strong>7.5 / 10</strong>
+                </div>
+
+                <div>
+                    <small>Primary Focus</small>
+                    <strong>Software • Embedded • AI • IoT</strong>
+                </div>
+
+                <div>
+                    <small>Based in</small>
+                    <strong>Tamil Nadu, India</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-label">
+            Technical Skills
+        </div>
+
+        <h2 class="section-title">
+            Tools I work with.
+        </h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>Software Development</h3>
+                <p>
+                    Python, FastAPI, Flask, REST APIs, SQL,
+                    SQLAlchemy and JWT Authentication.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Embedded Systems</h3>
+                <p>
+                    Embedded C, Embedded Linux, ESP32,
+                    Firmware Development and Sensor Interfacing.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>AI & Machine Learning</h3>
+                <p>
+                    TensorFlow, OpenCV, Pandas, NumPy,
+                    Machine Learning and Google Gemini AI.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Networking & Communication</h3>
+                <p>
+                    UART, SPI, I2C, TCP/IP, DHCP and DNS.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Development Tools</h3>
+                <p>
+                    Git, GitHub, GCC, Makefile, VS Code,
+                    Arduino IDE and Linux.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Databases</h3>
+                <p>
+                    MySQL and SQL-based data management.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-label">
+            Featured Work
+        </div>
+
+        <h2 class="section-title">
+            Projects.
+        </h2>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <div class="project-number">01</div>
+
+                <h3>AI Ticket Management System</h3>
+
+                <p>
+                    AI-powered ticket management platform with RESTful APIs,
+                    authentication, ticket tracking and AI-assisted
+                    categorization and response generation.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">Gemini AI</span>
+                    <span class="tag">JWT</span>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-number">02</div>
+
+                <h3>Embedded Broadband Router Firmware Simulator</h3>
+
+                <p>
+                    Linux-based firmware simulator built with a modular
+                    Embedded C architecture, including authentication,
+                    network configuration, DHCP simulation and device
+                    management.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Embedded C</span>
+                    <span class="tag">Linux</span>
+                    <span class="tag">GCC</span>
+                    <span class="tag">Makefile</span>
+                    <span class="tag">Git</span>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-number">03</div>
+
+                <h3>NeuraCare Smart Health Monitoring System</h3>
+
+                <p>
+                    ESP32-based IoT health monitoring system designed for
+                    real-time vital sign monitoring with sensor integration
+                    and machine-learning-based anomaly detection.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">ESP32</span>
+                    <span class="tag">Embedded C</span>
+                    <span class="tag">IoT</span>
+                    <span class="tag">Machine Learning</span>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-number">04</div>
+
+                <h3>Automated Retail Sales Pipeline</h3>
+
+                <p>
+                    Data analytics pipeline for processing retail sales data,
+                    generating business insights and visualizing important
+                    sales trends through an interactive dashboard.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Streamlit</span>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-number">05</div>
+
+                <h3>Skin Disease Detection CNN</h3>
+
+                <p>
+                    CNN-based image classification project using image
+                    preprocessing, model training and evaluation for
+                    skin disease prediction.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">OpenCV</span>
+                    <span class="tag">CNN</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-label">
+            Experience
+        </div>
+
+        <h2 class="section-title">
+            Where I've worked.
+        </h2>
+
+        <div class="timeline">
+
+            <div class="experience">
+
+                <h3>Python Developer Intern</h3>
+
+                <div class="company">
+                    AL QIYAMAH TECH
+                </div>
+
+                <div class="date">
+                    Feb 2026 – Apr 2026
+                </div>
+
+                <ul>
+                    <li>
+                        Developed a Flask-based brain stroke detection
+                        web application using Python, TensorFlow and OpenCV.
+                    </li>
+
+                    <li>
+                        Implemented image preprocessing, model inference
+                        and backend integration.
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="experience">
+
+                <h3>Embedded & IoT Intern</h3>
+
+                <div class="company">
+                    Petals Automation
+                </div>
+
+                <div class="date">
+                    Jun 2025 – Jul 2025
+                </div>
+
+                <ul>
+                    <li>
+                        Developed Embedded C applications for sensor
+                        interfacing and real-time IoT data acquisition.
+                    </li>
+
+                    <li>
+                        Worked with ESP32, UART, SPI and I2C communication
+                        protocols.
+                    </li>
+
+                    <li>
+                        Performed firmware testing and debugging.
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-label">
+            Education
+        </div>
+
+        <h2 class="section-title">
+            Academic background.
+        </h2>
+
+        <div class="education-card">
+
+            <h3>
+                B.E. Electronics and Communication Engineering
+            </h3>
+
+            <p>
+                SSM Institute of Engineering and Technology, Dindigul
+            </p>
+
+            <p>
+                2022 – 2026 &nbsp; | &nbsp; CGPA: 7.5 / 10
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-label">
+            Certifications
+        </div>
+
+        <h2 class="section-title">
+            Learning & certifications.
+        </h2>
+
+        <div class="certifications">
+
+            <div class="cert">
+                <h3>
+                    Introduction to Machine Learning
+                </h3>
+
+                <p>
+                    NPTEL — IIT Madras
+                </p>
+
+                <p>
+                    Jan 2025 – Apr 2025
+                </p>
+            </div>
+
+
+            <div class="cert">
+                <h3>
+                    Big Data Computing
+                </h3>
+
+                <p>
+                    NPTEL — IIT Kanpur
+                </p>
+
+                <p>
+                    Elite Silver
+                </p>
+            </div>
+
+
+            <div class="cert">
+                <h3>
+                    Introduction to IoT & Digital Transformation
+                </h3>
+
+                <p>
+                    Cisco Networking Academy
+                </p>
+
+                <p>
+                    Jun 2026
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div class="section-label">
+                Contact
+            </div>
+
+            <h2>
+                Let's connect.
+            </h2>
+
+            <p>
+                I'm open to opportunities in software development,
+                embedded systems, firmware, AI/ML and IoT.
+            </p>
+
+            <div class="contact-links">
+
+                <a href="mailto:renganayagi2005@gmail.com"
+                   class="btn btn-primary">
+                    Email Me
+                </a>
+
+                <a href="https://linkedin.com/in/renga-nayagi"
+                   target="_blank"
+                   class="btn btn-secondary">
+                    LinkedIn
+                </a>
+
+                <a href="https://github.com/renganayagi2005"
+                   target="_blank"
+                   class="btn btn-secondary">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 Santhana Renganayagi. All rights reserved.
+
+</footer>
+
+
+</body>
+</html>
