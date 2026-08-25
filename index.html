@@ -7,6 +7,17 @@
     <title>Santhana Renganayagi | Software & Embedded Engineer</title>
 
     <style>
+        :root {
+            --bg: #08090d;
+            --surface: #101218;
+            --surface-2: #151720;
+            --border: #242733;
+            --text: #f4f4f5;
+            --muted: #9699a6;
+            --accent: #8b5cf6;
+            --accent-light: #a78bfa;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -15,10 +26,10 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0b0b0f;
-            color: #f5f5f5;
-            line-height: 1.6;
+            font-family: Inter, Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
         }
 
         a {
@@ -27,8 +38,7 @@
         }
 
         .container {
-            width: 90%;
-            max-width: 1150px;
+            width: min(1120px, 90%);
             margin: auto;
         }
 
@@ -37,27 +47,26 @@
         nav {
             position: sticky;
             top: 0;
-            z-index: 1000;
-            background: rgba(11, 11, 15, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid #22232b;
+            z-index: 100;
+            background: rgba(8, 9, 13, 0.88);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
         }
 
-        .nav-inner {
-            height: 75px;
+        .nav {
+            height: 72px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
         .logo {
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: 1px;
+            font-size: 21px;
+            font-weight: 800;
         }
 
         .logo span {
-            color: #8b5cf6;
+            color: var(--accent);
         }
 
         .nav-links {
@@ -67,119 +76,133 @@
         }
 
         .nav-links a {
-            color: #b9b9c2;
+            color: var(--muted);
             font-size: 14px;
-            transition: 0.3s;
+            transition: 0.25s;
         }
 
         .nav-links a:hover {
-            color: #ffffff;
+            color: white;
         }
 
         /* HERO */
 
         .hero {
-            min-height: 90vh;
+            min-height: calc(100vh - 72px);
             display: flex;
             align-items: center;
-            padding: 90px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            right: -180px;
+            top: 80px;
+            background: var(--accent);
+            opacity: 0.08;
+            filter: blur(120px);
+            border-radius: 50%;
         }
 
         .hero-content {
             max-width: 850px;
+            position: relative;
         }
 
-        .small-title {
-            color: #8b5cf6;
-            font-size: 15px;
-            font-weight: 600;
+        .eyebrow {
+            color: var(--accent-light);
+            font-size: 13px;
+            font-weight: 700;
             letter-spacing: 2px;
-            margin-bottom: 20px;
             text-transform: uppercase;
+            margin-bottom: 24px;
         }
 
-        h1 {
-            font-size: clamp(45px, 7vw, 82px);
-            line-height: 1.05;
-            margin-bottom: 25px;
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 88px);
+            line-height: 0.98;
+            letter-spacing: -3px;
+            margin-bottom: 26px;
         }
 
-        h1 span {
-            color: #8b5cf6;
+        .hero h1 span {
+            color: var(--accent);
         }
 
-        .hero-subtitle {
-            font-size: 22px;
-            color: #d0d0d5;
+        .role {
+            font-size: clamp(20px, 3vw, 28px);
+            color: #d7d7dc;
             margin-bottom: 20px;
         }
 
-        .hero-description {
-            max-width: 700px;
-            color: #9999a5;
+        .hero-text {
+            max-width: 720px;
+            color: var(--muted);
             font-size: 17px;
-            margin-bottom: 35px;
+            margin-bottom: 34px;
         }
 
         .buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 14px;
+            gap: 12px;
         }
 
         .btn {
-            padding: 13px 22px;
+            padding: 12px 20px;
             border-radius: 8px;
-            border: 1px solid #30303a;
-            transition: 0.3s;
+            border: 1px solid var(--border);
             font-size: 14px;
+            transition: 0.25s;
         }
 
         .btn-primary {
-            background: #8b5cf6;
-            border-color: #8b5cf6;
+            background: var(--accent);
+            border-color: var(--accent);
             color: white;
         }
 
         .btn:hover {
             transform: translateY(-2px);
+            border-color: var(--accent);
         }
 
-        .btn-secondary:hover {
-            border-color: #8b5cf6;
-        }
-
-        /* GENERAL */
+        /* SECTIONS */
 
         section {
-            padding: 100px 0;
-            border-top: 1px solid #1e1e26;
+            padding: 110px 0;
+            border-top: 1px solid var(--border);
         }
 
-        .section-label {
-            color: #8b5cf6;
-            font-size: 13px;
-            letter-spacing: 2px;
+        .label {
+            color: var(--accent-light);
             text-transform: uppercase;
-            margin-bottom: 12px;
-            font-weight: 600;
+            letter-spacing: 2px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 10px;
         }
 
         .section-title {
-            font-size: 40px;
+            font-size: clamp(32px, 5vw, 48px);
+            letter-spacing: -1px;
             margin-bottom: 45px;
         }
 
         /* ABOUT */
 
-        .about-grid {
+        .about {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 60px;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 70px;
         }
 
         .about-text {
-            color: #aaaab4;
+            color: var(--muted);
             font-size: 17px;
         }
 
@@ -187,181 +210,193 @@
             margin-bottom: 18px;
         }
 
-        .quick-info {
-            border: 1px solid #272730;
+        .info-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
             padding: 28px;
-            border-radius: 14px;
-            background: #111117;
         }
 
-        .quick-info div {
-            margin-bottom: 22px;
+        .info-item {
+            padding: 17px 0;
+            border-bottom: 1px solid var(--border);
         }
 
-        .quick-info div:last-child {
-            margin-bottom: 0;
+        .info-item:first-child {
+            padding-top: 0;
         }
 
-        .quick-info small {
+        .info-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .info-item small {
             display: block;
-            color: #777783;
+            color: #6f7280;
             margin-bottom: 4px;
         }
 
         /* SKILLS */
 
-        .skills-grid {
+        .skills {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            gap: 18px;
         }
 
-        .skill-card {
-            background: #111117;
-            border: 1px solid #272730;
-            border-radius: 14px;
-            padding: 28px;
-            transition: 0.3s;
+        .skill {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 27px;
+            transition: 0.25s;
         }
 
-        .skill-card:hover {
-            border-color: #8b5cf6;
+        .skill:hover {
             transform: translateY(-4px);
+            border-color: var(--accent);
         }
 
-        .skill-card h3 {
-            margin-bottom: 15px;
-            font-size: 20px;
+        .skill h3 {
+            margin-bottom: 10px;
+            font-size: 19px;
         }
 
-        .skill-card p {
-            color: #9999a5;
+        .skill p {
+            color: var(--muted);
+            font-size: 15px;
         }
 
         /* PROJECTS */
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
+            gap: 22px;
         }
 
         .project {
-            background: #111117;
-            border: 1px solid #272730;
-            border-radius: 16px;
-            padding: 30px;
-            transition: 0.3s;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 17px;
+            padding: 32px;
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 20px;
+            transition: 0.25s;
         }
 
         .project:hover {
-            transform: translateY(-5px);
-            border-color: #8b5cf6;
+            border-color: var(--accent);
+            transform: translateY(-3px);
         }
 
         .project-number {
-            color: #8b5cf6;
-            font-size: 13px;
-            margin-bottom: 15px;
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 700;
         }
 
         .project h3 {
             font-size: 23px;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .project p {
-            color: #9999a5;
+            color: var(--muted);
             margin-bottom: 18px;
         }
 
         .tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 7px;
         }
 
         .tag {
-            background: #1b1b23;
-            color: #c8c8d0;
-            padding: 6px 10px;
+            padding: 5px 9px;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
             border-radius: 5px;
+            color: #bfc1ca;
             font-size: 12px;
         }
 
         /* EXPERIENCE */
 
         .timeline {
-            border-left: 2px solid #292934;
-            padding-left: 30px;
+            max-width: 850px;
+            border-left: 1px solid var(--border);
+            padding-left: 35px;
         }
 
-        .experience {
-            margin-bottom: 45px;
+        .job {
             position: relative;
+            margin-bottom: 50px;
         }
 
-        .experience::before {
+        .job::before {
             content: "";
             position: absolute;
-            left: -38px;
-            top: 5px;
-            width: 13px;
-            height: 13px;
-            background: #8b5cf6;
+            left: -41px;
+            top: 7px;
+            width: 11px;
+            height: 11px;
+            background: var(--accent);
             border-radius: 50%;
         }
 
-        .experience h3 {
+        .job h3 {
             font-size: 22px;
         }
 
         .company {
-            color: #8b5cf6;
-            margin: 5px 0;
+            color: var(--accent-light);
+            font-size: 15px;
+            margin: 3px 0;
         }
 
         .date {
-            color: #777783;
-            font-size: 14px;
+            color: #6f7280;
+            font-size: 13px;
             margin-bottom: 12px;
         }
 
-        .experience ul {
-            color: #9999a5;
+        .job ul {
+            color: var(--muted);
             padding-left: 18px;
         }
 
         /* EDUCATION */
 
         .education-card {
-            background: #111117;
-            border: 1px solid #272730;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
             padding: 30px;
-            border-radius: 14px;
         }
 
         .education-card h3 {
             font-size: 22px;
-            margin-bottom: 8px;
+            margin-bottom: 7px;
         }
 
         .education-card p {
-            color: #9999a5;
+            color: var(--muted);
         }
 
         /* CERTIFICATIONS */
 
-        .certifications {
+        .certs {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 18px;
         }
 
         .cert {
-            border: 1px solid #272730;
-            background: #111117;
-            border-radius: 14px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 15px;
             padding: 25px;
         }
 
@@ -371,42 +406,43 @@
         }
 
         .cert p {
-            color: #888894;
+            color: var(--muted);
             font-size: 14px;
         }
 
         /* CONTACT */
 
-        .contact-box {
+        .contact {
             text-align: center;
-            max-width: 700px;
+            max-width: 720px;
             margin: auto;
         }
 
-        .contact-box h2 {
-            font-size: 45px;
-            margin-bottom: 18px;
+        .contact h2 {
+            font-size: clamp(38px, 6vw, 60px);
+            letter-spacing: -2px;
+            margin-bottom: 15px;
         }
 
-        .contact-box p {
-            color: #9999a5;
+        .contact p {
+            color: var(--muted);
             margin-bottom: 30px;
         }
 
-        .contact-links {
+        .contact-buttons {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 12px;
         }
 
         /* FOOTER */
 
         footer {
-            border-top: 1px solid #1e1e26;
             padding: 30px 0;
+            border-top: 1px solid var(--border);
             text-align: center;
-            color: #666672;
+            color: #626571;
             font-size: 13px;
         }
 
@@ -418,23 +454,31 @@
                 display: none;
             }
 
-            .about-grid,
-            .skills-grid,
-            .projects,
-            .certifications {
+            .hero {
+                min-height: 85vh;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .about,
+            .skills,
+            .certs {
                 grid-template-columns: 1fr;
             }
 
-            .hero {
-                min-height: 80vh;
+            .project {
+                grid-template-columns: 1fr;
+                gap: 5px;
             }
 
-            .section-title {
-                font-size: 32px;
+            .project-number {
+                margin-bottom: 5px;
             }
 
-            .contact-box h2 {
-                font-size: 34px;
+            section {
+                padding: 80px 0;
             }
         }
     </style>
@@ -445,11 +489,11 @@
 <!-- NAVIGATION -->
 
 <nav>
-    <div class="container nav-inner">
+    <div class="container nav">
 
-        <div class="logo">
+        <a href="#" class="logo">
             SR<span>.</span>
-        </div>
+        </a>
 
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
@@ -467,55 +511,58 @@
 <!-- HERO -->
 
 <header class="hero">
+
     <div class="container">
 
         <div class="hero-content">
 
-            <div class="small-title">
+            <div class="eyebrow">
                 Software Engineering • Embedded Systems • AI & IoT
             </div>
 
             <h1>
                 Santhana<br>
-                <span>Renganayagi</span>
+                <span>Renganayagi.</span>
             </h1>
 
-            <div class="hero-subtitle">
-                Electronics & Communication Engineering Graduate
+            <div class="role">
+                Software Developer • Embedded Systems • AI & IoT
             </div>
 
-            <p class="hero-description">
-                I build software applications, embedded systems and intelligent
-                IoT solutions using Python, Embedded C, Linux, AI/ML and modern
-                development tools.
+            <p class="hero-text">
+                B.E. Electronics and Communication Engineering graduate
+                with hands-on experience in Python, backend development,
+                Embedded C, Linux, firmware, AI/ML and IoT.
             </p>
 
             <div class="buttons">
+
                 <a href="#projects" class="btn btn-primary">
-                    View Projects
+                    Explore My Work
                 </a>
 
-                <a href="mailto:renganayagi2005@gmail.com"
-                   class="btn btn-secondary">
-                    Contact Me
+                <a href="mailto:renganayagi2005@gmail.com" class="btn">
+                    Get In Touch
                 </a>
 
                 <a href="https://github.com/renganayagi2005"
                    target="_blank"
-                   class="btn btn-secondary">
+                   class="btn">
                     GitHub
                 </a>
 
                 <a href="https://linkedin.com/in/renga-nayagi"
                    target="_blank"
-                   class="btn btn-secondary">
+                   class="btn">
                     LinkedIn
                 </a>
+
             </div>
 
         </div>
 
     </div>
+
 </header>
 
 
@@ -525,57 +572,56 @@
 
     <div class="container">
 
-        <div class="section-label">
-            About Me
-        </div>
+        <div class="label">01 — About</div>
 
         <h2 class="section-title">
-            Building across software & hardware.
+            A cross-disciplinary engineering profile.
         </h2>
 
-        <div class="about-grid">
+        <div class="about">
 
             <div class="about-text">
 
                 <p>
                     I am a B.E. Electronics and Communication Engineering
-                    graduate with hands-on experience in software development,
-                    embedded systems, firmware, AI/ML and IoT.
+                    graduate with hands-on experience spanning software
+                    development, embedded systems, firmware, AI/ML and IoT.
                 </p>
 
                 <p>
-                    My experience includes Python backend development,
-                    Embedded C applications, Linux-based firmware simulation,
-                    ESP32-based IoT systems and AI-powered applications.
+                    Through internships and academic projects, I have worked
+                    with Python backend development, Embedded C, Linux-based
+                    firmware simulation, ESP32 systems and AI-powered
+                    applications.
                 </p>
 
                 <p>
-                    I enjoy working on problems where software, hardware and
-                    intelligent systems come together to create practical
-                    solutions.
+                    My goal is to build reliable, practical technology by
+                    combining software engineering with embedded and
+                    intelligent systems.
                 </p>
 
             </div>
 
-            <div class="quick-info">
+            <div class="info-box">
 
-                <div>
-                    <small>Degree</small>
+                <div class="info-item">
+                    <small>Education</small>
                     <strong>B.E. Electronics & Communication Engineering</strong>
                 </div>
 
-                <div>
+                <div class="info-item">
                     <small>CGPA</small>
                     <strong>7.5 / 10</strong>
                 </div>
 
-                <div>
-                    <small>Primary Focus</small>
+                <div class="info-item">
+                    <small>Career Focus</small>
                     <strong>Software • Embedded • AI • IoT</strong>
                 </div>
 
-                <div>
-                    <small>Based in</small>
+                <div class="info-item">
+                    <small>Location</small>
                     <strong>Tamil Nadu, India</strong>
                 </div>
 
@@ -594,57 +640,55 @@
 
     <div class="container">
 
-        <div class="section-label">
-            Technical Skills
-        </div>
+        <div class="label">02 — Skills</div>
 
         <h2 class="section-title">
-            Tools I work with.
+            Technologies I work with.
         </h2>
 
-        <div class="skills-grid">
+        <div class="skills">
 
-            <div class="skill-card">
+            <div class="skill">
                 <h3>Software Development</h3>
                 <p>
-                    Python, FastAPI, Flask, REST APIs, SQL,
-                    SQLAlchemy and JWT Authentication.
+                    Python, FastAPI, Flask, REST APIs,
+                    SQLAlchemy and JWT.
                 </p>
             </div>
 
-            <div class="skill-card">
+            <div class="skill">
                 <h3>Embedded Systems</h3>
                 <p>
                     Embedded C, Embedded Linux, ESP32,
-                    Firmware Development and Sensor Interfacing.
+                    firmware development and sensor interfacing.
                 </p>
             </div>
 
-            <div class="skill-card">
+            <div class="skill">
                 <h3>AI & Machine Learning</h3>
                 <p>
                     TensorFlow, OpenCV, Pandas, NumPy,
-                    Machine Learning and Google Gemini AI.
+                    machine learning and Google Gemini AI.
                 </p>
             </div>
 
-            <div class="skill-card">
-                <h3>Networking & Communication</h3>
+            <div class="skill">
+                <h3>Networking & Protocols</h3>
                 <p>
                     UART, SPI, I2C, TCP/IP, DHCP and DNS.
                 </p>
             </div>
 
-            <div class="skill-card">
-                <h3>Development Tools</h3>
+            <div class="skill">
+                <h3>Tools</h3>
                 <p>
                     Git, GitHub, GCC, Makefile, VS Code,
                     Arduino IDE and Linux.
                 </p>
             </div>
 
-            <div class="skill-card">
-                <h3>Databases</h3>
+            <div class="skill">
+                <h3>Database</h3>
                 <p>
                     MySQL and SQL-based data management.
                 </p>
@@ -663,127 +707,137 @@
 
     <div class="container">
 
-        <div class="section-label">
-            Featured Work
-        </div>
+        <div class="label">03 — Featured Work</div>
 
         <h2 class="section-title">
-            Projects.
+            Projects I've built.
         </h2>
 
         <div class="projects">
 
-            <div class="project">
+            <article class="project">
 
                 <div class="project-number">01</div>
 
-                <h3>AI Ticket Management System</h3>
+                <div>
+                    <h3>AI Ticket Management System</h3>
 
-                <p>
-                    AI-powered ticket management platform with RESTful APIs,
-                    authentication, ticket tracking and AI-assisted
-                    categorization and response generation.
-                </p>
+                    <p>
+                        AI-powered ticket management system with RESTful APIs
+                        for ticket creation, assignment, tracking and status
+                        management, along with AI-based categorization and
+                        automated response generation.
+                    </p>
 
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">FastAPI</span>
-                    <span class="tag">MySQL</span>
-                    <span class="tag">Gemini AI</span>
-                    <span class="tag">JWT</span>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">SQLAlchemy</span>
+                        <span class="tag">JWT</span>
+                        <span class="tag">Gemini AI</span>
+                    </div>
                 </div>
 
-            </div>
+            </article>
 
 
-            <div class="project">
+            <article class="project">
 
                 <div class="project-number">02</div>
 
-                <h3>Embedded Broadband Router Firmware Simulator</h3>
+                <div>
+                    <h3>Embedded Broadband Router Firmware Simulator</h3>
 
-                <p>
-                    Linux-based firmware simulator built with a modular
-                    Embedded C architecture, including authentication,
-                    network configuration, DHCP simulation and device
-                    management.
-                </p>
+                    <p>
+                        Linux-based broadband router firmware simulator
+                        developed in Embedded C with user authentication,
+                        network configuration, DHCP simulation and device
+                        management.
+                    </p>
 
-                <div class="tags">
-                    <span class="tag">Embedded C</span>
-                    <span class="tag">Linux</span>
-                    <span class="tag">GCC</span>
-                    <span class="tag">Makefile</span>
-                    <span class="tag">Git</span>
+                    <div class="tags">
+                        <span class="tag">Embedded C</span>
+                        <span class="tag">Linux</span>
+                        <span class="tag">GCC</span>
+                        <span class="tag">Makefile</span>
+                        <span class="tag">Git</span>
+                    </div>
                 </div>
 
-            </div>
+            </article>
 
 
-            <div class="project">
+            <article class="project">
 
                 <div class="project-number">03</div>
 
-                <h3>NeuraCare Smart Health Monitoring System</h3>
+                <div>
+                    <h3>NeuraCare Smart Health Monitoring System</h3>
 
-                <p>
-                    ESP32-based IoT health monitoring system designed for
-                    real-time vital sign monitoring with sensor integration
-                    and machine-learning-based anomaly detection.
-                </p>
+                    <p>
+                        ESP32-based IoT monitoring system designed for
+                        real-time patient vital monitoring using sensors
+                        and machine-learning-based anomaly detection.
+                    </p>
 
-                <div class="tags">
-                    <span class="tag">ESP32</span>
-                    <span class="tag">Embedded C</span>
-                    <span class="tag">IoT</span>
-                    <span class="tag">Machine Learning</span>
+                    <div class="tags">
+                        <span class="tag">ESP32</span>
+                        <span class="tag">Embedded C</span>
+                        <span class="tag">IoT</span>
+                        <span class="tag">Machine Learning</span>
+                    </div>
                 </div>
 
-            </div>
+            </article>
 
 
-            <div class="project">
+            <article class="project">
 
                 <div class="project-number">04</div>
 
-                <h3>Automated Retail Sales Pipeline</h3>
+                <div>
+                    <h3>Automated Retail Sales Pipeline</h3>
 
-                <p>
-                    Data analytics pipeline for processing retail sales data,
-                    generating business insights and visualizing important
-                    sales trends through an interactive dashboard.
-                </p>
+                    <p>
+                        Automated analytics pipeline using Python, Pandas
+                        and SQL to process retail sales data and provide
+                        interactive business insights through Streamlit.
+                    </p>
 
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Pandas</span>
-                    <span class="tag">SQL</span>
-                    <span class="tag">Streamlit</span>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Streamlit</span>
+                    </div>
                 </div>
 
-            </div>
+            </article>
 
 
-            <div class="project">
+            <article class="project">
 
                 <div class="project-number">05</div>
 
-                <h3>Skin Disease Detection CNN</h3>
+                <div>
+                    <h3>Skin Disease Detection CNN</h3>
 
-                <p>
-                    CNN-based image classification project using image
-                    preprocessing, model training and evaluation for
-                    skin disease prediction.
-                </p>
+                    <p>
+                        CNN-based image classification project using
+                        TensorFlow and OpenCV for image preprocessing,
+                        model training and performance evaluation.
+                    </p>
 
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">TensorFlow</span>
-                    <span class="tag">OpenCV</span>
-                    <span class="tag">CNN</span>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">CNN</span>
+                    </div>
                 </div>
 
-            </div>
+            </article>
 
         </div>
 
@@ -798,17 +852,15 @@
 
     <div class="container">
 
-        <div class="section-label">
-            Experience
-        </div>
+        <div class="label">04 — Experience</div>
 
         <h2 class="section-title">
-            Where I've worked.
+            Practical experience.
         </h2>
 
         <div class="timeline">
 
-            <div class="experience">
+            <div class="job">
 
                 <h3>Python Developer Intern</h3>
 
@@ -828,14 +880,14 @@
 
                     <li>
                         Implemented image preprocessing, model inference
-                        and backend integration.
+                        and backend integration for medical image prediction.
                     </li>
                 </ul>
 
             </div>
 
 
-            <div class="experience">
+            <div class="job">
 
                 <h3>Embedded & IoT Intern</h3>
 
@@ -850,12 +902,13 @@
                 <ul>
                     <li>
                         Developed Embedded C applications for sensor
-                        interfacing and real-time IoT data acquisition.
+                        interfacing and real-time IoT data acquisition
+                        using ESP32.
                     </li>
 
                     <li>
-                        Worked with ESP32, UART, SPI and I2C communication
-                        protocols.
+                        Worked with UART, SPI and I2C communication
+                        protocols for hardware interfacing.
                     </li>
 
                     <li>
@@ -878,9 +931,7 @@
 
     <div class="container">
 
-        <div class="section-label">
-            Education
-        </div>
+        <div class="label">05 — Education</div>
 
         <h2 class="section-title">
             Academic background.
@@ -897,7 +948,7 @@
             </p>
 
             <p>
-                2022 – 2026 &nbsp; | &nbsp; CGPA: 7.5 / 10
+                2022 – 2026 &nbsp; • &nbsp; CGPA: 7.5 / 10
             </p>
 
         </div>
@@ -913,58 +964,30 @@
 
     <div class="container">
 
-        <div class="section-label">
-            Certifications
-        </div>
+        <div class="label">06 — Certifications</div>
 
         <h2 class="section-title">
-            Learning & certifications.
+            Continuous learning.
         </h2>
 
-        <div class="certifications">
+        <div class="certs">
 
             <div class="cert">
-                <h3>
-                    Introduction to Machine Learning
-                </h3>
-
-                <p>
-                    NPTEL — IIT Madras
-                </p>
-
-                <p>
-                    Jan 2025 – Apr 2025
-                </p>
+                <h3>Introduction to Machine Learning</h3>
+                <p>NPTEL — IIT Madras</p>
+                <p>Jan 2025 – Apr 2025</p>
             </div>
 
-
             <div class="cert">
-                <h3>
-                    Big Data Computing
-                </h3>
-
-                <p>
-                    NPTEL — IIT Kanpur
-                </p>
-
-                <p>
-                    Elite Silver
-                </p>
+                <h3>Big Data Computing</h3>
+                <p>NPTEL — IIT Kanpur</p>
+                <p>Elite Silver</p>
             </div>
 
-
             <div class="cert">
-                <h3>
-                    Introduction to IoT & Digital Transformation
-                </h3>
-
-                <p>
-                    Cisco Networking Academy
-                </p>
-
-                <p>
-                    Jun 2026
-                </p>
+                <h3>Introduction to IoT & Digital Transformation</h3>
+                <p>Cisco Networking Academy</p>
+                <p>Jun 2026</p>
             </div>
 
         </div>
@@ -980,38 +1003,36 @@
 
     <div class="container">
 
-        <div class="contact-box">
+        <div class="contact">
 
-            <div class="section-label">
-                Contact
-            </div>
+            <div class="label">07 — Contact</div>
 
             <h2>
                 Let's connect.
             </h2>
 
             <p>
-                I'm open to opportunities in software development,
+                Open to opportunities in software development,
                 embedded systems, firmware, AI/ML and IoT.
             </p>
 
-            <div class="contact-links">
+            <div class="contact-buttons">
 
                 <a href="mailto:renganayagi2005@gmail.com"
                    class="btn btn-primary">
-                    Email Me
-                </a>
-
-                <a href="https://linkedin.com/in/renga-nayagi"
-                   target="_blank"
-                   class="btn btn-secondary">
-                    LinkedIn
+                    Email
                 </a>
 
                 <a href="https://github.com/renganayagi2005"
                    target="_blank"
-                   class="btn btn-secondary">
+                   class="btn">
                     GitHub
+                </a>
+
+                <a href="https://linkedin.com/in/renga-nayagi"
+                   target="_blank"
+                   class="btn">
+                    LinkedIn
                 </a>
 
             </div>
@@ -1023,14 +1044,9 @@
 </section>
 
 
-<!-- FOOTER -->
-
 <footer>
-
-    © 2026 Santhana Renganayagi. All rights reserved.
-
+    © 2026 Santhana Renganayagi
 </footer>
-
 
 </body>
 </html>
